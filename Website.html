@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+  <title>SHIN - Disaster Management & Relief</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    header { background-color: red; color: white; padding: 15px; text-align:center; position: sticky; top:0; z-index:100; }
+    nav { margin-top:10px; }
+    nav a { color:white; margin:0 10px; text-decoration:none; }
+    nav a:hover { text-decoration:underline; }
+    section { padding:20px; }
+    h2 { color:red; }
+    ul { list-style-type: square; }
+    iframe { width:100%; height:400px; border:1px solid #ccc; }
+    footer { background-color:#333; color:white; text-align:center; padding:10px; }
+    .sos-button { position: fixed; bottom: 20px; right: 20px; background-color:red; color:white; border:none; padding:15px 25px; font-size:18px; font-weight:bold; cursor:pointer; border-radius:10px; }
+    .sos-links { display:none; position: fixed; bottom: 70px; right: 20px; background-color:#fff; border:1px solid #ccc; border-radius:10px; padding:10px; z-index:100; }
+    .sos-links a { display:block; margin:5px 0; text-decoration:none; color:red; font-weight:bold; }
+    .language-select { margin-left:20px; padding:5px; }
+    .dashboard { background-color:#f2f2f2; padding:15px; max-height:300px; overflow-y:scroll; border:1px solid #ccc; margin-top:10px; }
+    .form-section { background-color:#f9f9f9; padding:15px; border:1px solid #ccc; margin-top:10px; }
+    input, textarea, select { width:100%; padding:8px; margin:5px 0; }
+    input[type="submit"] { background-color:red; color:white; border:none; padding:10px; cursor:pointer; border-radius:5px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SHIN - System Hazardous Information & Notification</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#donation">Donation</a>
+      <a href="#relief">Emergency Numbers</a>
+      <a href="#weather">Weather</a>
+      <a href="#map">Map</a>
+      <a href="#missing">Missing/Found</a>
+      <a href="#contact">Contact</a>
+      <select class="language-select">
+        <option>English</option>
+        <option>Hindi</option>
+        <option>Spanish</option>
+        <option>French</option>
+      </select>
+    </nav>
+  </header>
+
+  <section id="dashboard">
+    <h2>Live Disaster Dashboard</h2>
+    <label for="state">Select State:</label>
+    <select id="state">
+      <option>Maharashtra</option>
+      <option>Kerala</option>
+      <option>Uttar Pradesh</option>
+      <option>Rajasthan</option>
+    </select>
+
+    <label for="city">Select City:</label>
+    <select id="city">
+      <option>City 1</option>
+      <option>City 2</option>
+      <option>City 3</option>
+    </select>
+
+    <div class="dashboard">
+      <p>[Maharashtra - City 1] Flood alert in low-lying areas.</p>
+      <p>[Kerala - City 2] Heavy rainfall expected.</p>
+      <p>[Uttar Pradesh - City 3] Heatwave warning issued.</p>
+      <p>[Rajasthan - City 1] Sandstorm advisory.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About SHIN</h2>
+    <p>SHIN is a disaster management and relief platform that provides important information, resources, and emergency support. It helps spread awareness and ensures quick relief during disasters.</p>
+    <p>This is an <b>offline web app</b>, which means you can use it without an internet connection after downloading all the necessary files.</p>
+  </section>
+
+  <section id="donation">
+    <h2>Donation</h2>
+    <p>You can help communities by donating. Every small help counts.</p>
+    <ul>
+      <li><b>Bank Transfer:</b> SHIN Relief Fund, A/C: 123456789, IFSC: ABCD0123456</li>
+      <li><b>UPI:</b> shinrelief@upi</li>
+      <li><b>Donation Help:</b> +91-888-777-6666</li>
+    </ul>
+    <p>Scan to donate:</p>
+    <div style="text-align:center; margin-top:10px;">
+      <img src="qr-sample.png" alt="Donation QR Code" width="200">
+    </div>
+  </section>
+
+  <section id="relief">
+    <h2>Emergency Numbers</h2>
+    <ul>
+      <li>National Disaster Helpline: 108</li>
+      <li>Fire: 101</li>
+      <li>Ambulance: 102</li>
+      <li>Police: 100</li>
+      <li>Relief Center: 1800-123-456</li>
+    </ul>
+  </section>
+
+  <section id="weather">
+    <h2>Live Weather Forecast</h2>
+    <iframe src="https://www.meteoblue.com/en/weather/maps/widget?windAnimation=0&weatherAnimation=0&geoloc=detect"></iframe>
+  </section>
+
+  <section id="map">
+    <h2>Interactive Weather & Satellite Map</h2>
+    <iframe src="https://embed.windy.com/embed2.html?lat=20&lon=78&zoom=4&level=surface&overlay=wind"></iframe>
+  </section>
+
+  <section id="missing">
+    <h2>Missing / Found People</h2>
+    <div class="form-section">
+      <h3>Report Missing Person</h3>
+      <form>
+        <label>Full Name:</label>
+        <input type="text" name="missing-name">
+        <label>Age:</label>
+        <input type="text" name="missing-age">
+        <label>Last Seen Location:</label>
+        <input type="text" name="missing-location">
+        <label>Upload Photo:</label>
+        <input type="file" name="missing-photo">
+        <input type="submit" value="Submit Missing Person">
+      </form>
+    </div>
+    <div class="form-section">
+      <h3>Report Found Person</h3>
+      <form>
+        <label>Full Name or Description:</label>
+        <input type="text" name="found-desc">
+        <label>Location Found:</label>
+        <input type="text" name="found-location">
+        <label>Upload Photo:</label>
+        <input type="file" name="found-photo">
+        <input type="submit" value="Submit Found Person">
+      </form>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 SHIN | Disaster Management & Relief</p>
+    <p>Email: support@shin.org | Phone: +91-999-888-7777</p>
+  </footer>
+
+  <button class="sos-button" onclick="toggleSOS()">SOS</button>
+  <div class="sos-links" id="sos-links">
+    <a href="tel:108">National Disaster Helpline</a>
+    <a href="tel:101">Fire Department</a>
+    <a href="tel:102">Ambulance</a>
+    <a href="tel:100">Police</a>
+    <a href="mailto:ngo@relief.org">NGO Help</a>
+    <a href="mailto:volunteers@relief.org">Volunteers</a>
+  </div>
+
+  <script>
+    function toggleSOS() {
+      const sos = document.getElementById("sos-links");
+      sos.style.display = (sos.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
